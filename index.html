@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antinflax (AFX) - A Nova Reserva de Valor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            padding: 40px 20px 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #00FFC6;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 10px auto 30px;
+        }
+        .counter {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .cta {
+            background-color: #00FFC6;
+            color: #000000;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta:hover {
+            background-color: #00cca0;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Antinflax (AFX)</h1>
+        <p>A nova reserva de valor global. Conecte-se à revolução financeira livre de manipulação.</p>
+        <div class="counter" id="countdown"></div>
+        <a href="#" class="cta">Participar do Airdrop</a>
+    </header>
+    <footer>
+        <p>Redes sociais em breve • Código aberto • Total transparência</p>
+    </footer>
+
+    <script>
+        const launchDate = new Date("2025-07-31T00:00:00").getTime();
+        const countdown = document.getElementById("countdown");
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                countdown.innerHTML = "Lançamento ativo!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        };
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
